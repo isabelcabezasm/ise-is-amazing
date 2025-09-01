@@ -38,6 +38,10 @@ This starts both the Next.js frontend and Python FastAPI backend.
    - **Amazing App**: `http://localhost:3000/amazing`
    - **Word Clouds**: `http://localhost:3000/cloud`
 
+## ⚡ UI-Prototyper
+Using https://github.com/aavetis/ui-prototyper[https://github.com/aavetis/ui-prototyper] to accelerate development
+
+
 ## 🚀 Deploy to Azure
 
 We provide easy deployment scripts for Azure:

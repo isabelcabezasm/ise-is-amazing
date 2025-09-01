@@ -234,17 +234,7 @@ We welcome contributions that:
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
----
 
 **Remember: You are amazing in every language! �✨**
 
-```
 
-**Optional:** Enable 'auto approve' in Copilot settings to automatically apply agent-written changes to the codebase. You'll still be able to review and choose whether to keep or discard changes from the entire session. This setting can be found in VS Code settings > Chat > Tools > Auto Approve.
-
-
-## Example
-
-See the simple prompt in the GitHub Copilot chat, and the web preview that was generated.
-<img width="1768" alt="Screenshot 2025-06-04 at 11 39 10 AM" src="https://github.com/user-attachments/assets/d783e75a-477c-4298-87c9-e13284cf5b3e" />
-```

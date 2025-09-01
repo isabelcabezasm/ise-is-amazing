@@ -1,0 +1,74 @@
+{
+	"name": "UI Prototyper Dev Environment",
+	"build": {
+		"dockerfile": "Dockerfile"
+	},
+	"workspaceFolder": "/workspaces/ui-prototyper",
+	
+	// Configure tool-specific properties
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"python.defaultInterpreterPath": "/usr/local/python/current/bin/python3",
+				"editor.formatOnSave": true,
+				"terminal.integrated.defaultProfile.linux": "bash"
+			},
+			"extensions": [
+				"ms-python.python",
+				"ms-python.black-formatter",
+				"ms-vscode.vscode-json",
+				"ms-azuretools.vscode-azurefunctions",
+				"ms-vscode.azure-account",
+				"bradlc.vscode-tailwindcss",
+				"esbenp.prettier-vscode",
+				"GitHub.copilot",
+				"GitHub.copilot-chat"
+			]
+		}
+	},
+
+	// Forward ports for development
+	"forwardPorts": [3000, 8001, 8000],
+	"portsAttributes": {
+		"3000": {
+			"label": "Next.js Frontend",
+			"onAutoForward": "notify"
+		},
+		"8001": {
+			"label": "FastAPI Backend",
+			"onAutoForward": "notify"
+		},
+		"8000": {
+			"label": "Alternative Backend Port",
+			"onAutoForward": "silent"
+		}
+	},
+
+	// Use 'postCreateCommand' to run commands after the container is created
+	"postCreateCommand": "bash .devcontainer/setup.sh",
+
+	// Configure container features
+	"features": {
+		"ghcr.io/devcontainers/features/python:1": {
+			"version": "3.13.5",
+			"installTools": true
+		},
+		"ghcr.io/devcontainers/features/node:1": {
+			"version": "20"
+		},
+		"ghcr.io/devcontainers/features/git:1": {},
+		"ghcr.io/devcontainers/features/github-cli:1": {},
+		"ghcr.io/devcontainers/features/azure-cli:1": {
+			"version": "latest"
+		}
+	},
+
+	// Set environment variables
+	"containerEnv": {
+		"PYTHONPATH": "/workspaces/ui-prototyper",
+		"PYTHONUNBUFFERED": "1"
+	},
+
+	// Run as non-root user
+	"remoteUser": "vscode"
+}

@@ -1,0 +1,99 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug Next.js UI",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/node_modules/.bin/next",
+      "args": ["dev", "--turbopack"],
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "NODE_ENV": "development"
+      },
+      "console": "integratedTerminal",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "serverReadyAction": {
+        "pattern": "- Local:.*?(https?://[^\\s]*)",
+        "uriFormat": "%s",
+        "action": "openExternally"
+      }
+    },
+    {
+      "name": "Debug Python FastAPI",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/api-python/main.py",
+      "python": "${workspaceFolder}/venv/bin/python",
+      "cwd": "${workspaceFolder}/api-python",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}/api-python"
+      },
+      "console": "integratedTerminal",
+      "justMyCode": false,
+      "args": []
+    },
+    {
+      "name": "Debug Python FastAPI with Uvicorn",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "uvicorn",
+      "python": "${workspaceFolder}/venv/bin/python",
+      "args": [
+        "main:app",
+        "--host", "0.0.0.0",
+        "--port", "8000",
+        "--reload"
+      ],
+      "cwd": "${workspaceFolder}/api-python",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}/api-python"
+      },
+      "console": "integratedTerminal",
+      "justMyCode": false
+    },
+    {
+      "name": "Attach to Python FastAPI (Remote)",
+      "type": "debugpy",
+      "request": "attach",
+      "connect": {
+        "host": "localhost",
+        "port": 5678
+      },
+      "pathMappings": [
+        {
+          "localRoot": "${workspaceFolder}/api-python",
+          "remoteRoot": "/app"
+        }
+      ],
+      "justMyCode": false
+    },
+    {
+      "name": "Debug Current Python File",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${file}",
+      "python": "${workspaceFolder}/venv/bin/python",
+      "cwd": "${workspaceFolder}",
+      "env": {
+      "PYTHONPATH": "${workspaceFolder}"
+      },
+      "console": "integratedTerminal",
+      "justMyCode": false,
+      "args": []
+    }
+
+  ],
+  "compounds": [
+    {
+      "name": "Debug Full Stack (UI + API)",
+      "configurations": [
+        "Debug Next.js UI",
+        "Debug Python FastAPI with Uvicorn"
+      ],
+      "stopAll": true
+    }
+  ]
+}

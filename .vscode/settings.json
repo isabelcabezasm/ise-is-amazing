@@ -1,0 +1,19 @@
+{
+  "python.defaultInterpreterPath": "./venv/bin/python",
+  "python.terminal.activateEnvironment": true,
+  "python.analysis.extraPaths": [
+    "./api-python"
+  ],
+  "files.associations": {
+    "*.json": "jsonc"
+  },
+  "typescript.preferences.includePackageJsonAutoImports": "auto",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "eslint.workingDirectories": [
+    "."
+  ],
+  "debug.allowBreakpointsEverywhere": true,
+  "debug.node.autoAttach": "on"
+}

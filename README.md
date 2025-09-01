@@ -38,12 +38,6 @@ This starts both the Next.js frontend and Python FastAPI backend.
    - **Amazing App**: `http://localhost:3000/amazing`
    - **Word Clouds**: `http://localhost:3000/cloud`
 
-## � Live Demo
-
-**Production Application**: https://white-cliff-0303bcc1e.2.azurestaticapps.net
-**API Endpoint**: https://youareamazing-api.ambitiousmushroom-0229ef63.westus2.azurecontainerapps.io
-**API Documentation**: https://youareamazing-api.ambitiousmushroom-0229ef63.westus2.azurecontainerapps.io/docs
-
 ## 🚀 Deploy to Azure
 
 We provide easy deployment scripts for Azure:
